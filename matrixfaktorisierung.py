@@ -53,11 +53,11 @@ def recommend_movies(preds_df, userID, movies_df, original_ratings_df, num_recom
 already_rated, predictions = recommend_movies(preds_df, 611, movies, ratings, 5)
 
 # Ausgabe der bereits bewerteten Filme des Nutzers
-print("Bereits bewertete Filme von Nutzer 1:")
+print("Bereits bewertete Filme:")
 print(already_rated)
 
 # Ausgabe der Filmempfehlungen für den Nutzer
-print("\nEmpfohlene Filme für Nutzer 1:")
+print("\nEmpfohlene Filme:")
 print(predictions)
 # Extraktion der Movie IDs aus den Empfehlungen
 recommended_movie_ids = predictions['movieId'].tolist()
@@ -65,5 +65,5 @@ recommended_movie_ids = predictions['movieId'].tolist()
 # Umwandlung in einen kommagetrennten String
 recommended_movie_ids_str = ', '.join(map(str, recommended_movie_ids))
 
-print("Empfohlene Movie IDs für Nutzer 611:")
+print("Empfohlene Movie IDs:")
 print(recommended_movie_ids_str)
