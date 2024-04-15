@@ -2,7 +2,18 @@ import pandas as pd
 from joblib import load
 
 def recommend_movies_combined(movie_ids, num_recommendations=5):
-    # Laden der vorverarbeiteten DatenFrames
+    # URL der Pickle-Datei
+    url = 'https://thesis.til-batzner.de/combined_sim.pkl'
+
+    # Datei überschreitet das Limit von GitHub, Download erforderlich
+    response = requests.get(url)
+    response.raise_for_status()  
+
+    # Schreibe die heruntergeladene Datei in eine lokale Datei
+    with open('combined_sim.pkl', 'wb') as file:
+    file.write(response.content)
+
+    # Lade die Pickle-Datei in einen DataFrame
     combined_sim = pd.read_pickle('combined_sim.pkl')
 
     sim_scores_combined_list = []  # Liste zum Sammeln der Serien
