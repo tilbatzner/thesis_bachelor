@@ -1,0 +1,8 @@
+runtime: python39  # oder eine andere unterstützte Version
+entrypoint: gunicorn -b :$PORT main:app  # Verweist auf die 'app'-Variable in 'main.py'
+
+instance_class: F4_1G
+
+handlers:
+- url: /.*
+  script: auto
